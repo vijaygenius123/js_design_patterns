@@ -25,3 +25,10 @@ const employees = []
 
 employees.push(employeeFactory.create("Patrick", 1))
 employees.push(employeeFactory.create("John", 2))
+
+
+function displayID(){
+    console.log(`${this.name} - ${this.type}`)
+}
+
+employees.forEach(emp => displayID.call(emp))
