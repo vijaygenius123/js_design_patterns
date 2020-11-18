@@ -11,7 +11,9 @@ const Singelton = (function () {
                 return this.numProcess;
             },
             incrementCount: () => {
+                const span = document.getElementById('count')
                 this.numProcess = this.numProcess + 1
+                span.innerText = this.numProcess;
                 return this.numProcess
             }
         }
@@ -47,3 +49,15 @@ console.log(processManager.incrementCount())
 
 console.log(processManager.getProcessCount())
 console.log(processManager2.getProcessCount())
+
+
+const btn1 = document.getElementById('btn1')
+const btn2 = document.getElementById('btn2')
+
+btn1.addEventListener('click', () => {
+    processManager.incrementCount()
+})
+
+btn2.addEventListener('click', () => {
+    processManager2.incrementCount()
+})
